@@ -1,0 +1,92 @@
+Created by testinium on 10.01.2020
+
+This is a concept file with following syntax for each concept.
+# Kullanıcı Girişi
+* Menüye götür ve bekle
+* Wait "2" seconds
+* Click to element "loginPage"
+* Wait "2" seconds
+* "erkansoylutestinium@gmail.com" textini elemente yaz "email"
+* Wait "2" seconds
+* "Ab12345678" textini elemente yaz "password"
+* Wait "1" seconds
+* Click to element "loginButton"
+* Wait "5" seconds
+* "usernameArea" elementi "erkan soylu" değerini içeriyor mu kontrol et
+* Wait "2" seconds
+
+# Sepeti ürünü kontrol et
+* Wait "10" seconds
+* Sepetteki ürünü kontrol et
+* Wait "2" seconds
+
+# Marka seç
+* "markaSecim" alanından rastgele seç
+* Wait "2" seconds
+* "10" textini elemente yaz "minimumPrice"
+* Wait "2" seconds
+* "4000" textini elemente yaz "maximumPrice"
+* Wait "2" seconds
+* Click to element "searchFilter"
+* Wait "5" seconds
+
+# Sepete ekle ve sepetime git
+* "1" Adet seç ve sepete ekle / ardından sepete git ve adeti karşılaştır.
+* Wait "2" seconds
+* Adedi 2 arttir
+* Wait "2" seconds
+
+# Fatura adreslerim alanına git ve adreslerimi sil
+* Menüye götür ve bekle
+* Wait "2" seconds
+* Click to element "hesabim"
+* Wait "10" seconds
+* Click to element "adreslerim"
+* Wait "5" seconds
+* Click to element "faturaAdreslerim"
+* Wait "2" seconds
+* Click to element "adresSilmeOnayButonu"
+* Wait "5" seconds
+* Click to element "adresSilmeButonu"
+* Wait "5" seconds
+* Click to element "teslimatAdreslerim"
+* Wait "2" seconds
+* Click to element "adresSilmeOnayButonu"
+* Wait "5" seconds
+* Click to element "adresSilmeButonu"
+* Wait "5" seconds
+* Click to element "teslimatAdreslerim"
+
+# Yeni adres ekle butonuna tıklanır ve adres eklenir.
+* "Erkan" textini elemente yaz "adresisim"
+* Wait "2" seconds
+* "Soylu" textini elemente yaz "adresSoyisim"
+* Wait "2" seconds
+* "test" textini elemente yaz "adres"
+* Wait "2" seconds
+* "test" textini elemente yaz "adresAdi"
+* Wait "2" seconds
+* "5458814686" textini elemente yaz "telefon"
+* Wait "2" seconds
+* Element "tc" var mı kontrol et varsa texti yaz "63804292958"
+ "63804292958" textini elemente yaz "tc"
+* Wait "2" seconds
+* Click to element "ilce"
+* Wait "20" seconds
+* Click to element "adalar"
+* Wait "10" seconds
+* mahalle yi sec
+* Wait "2" seconds
+* Click to element "AlisverisiTamamla"
+
+# Kredi kartını seç ve bilgileri doldur ardından sepete dön
+* Wait "5" seconds
+* Click to element "krediKarti"
+* Wait "5" seconds
+* "1234567887654321" textini elemente yaz "krediKartiNo"
+* Wait "5" seconds
+* "erkan soylu" textini elemente yaz "krediKartiAdi"
+* Wait "5" seconds
+* "123" textini elemente yaz "cvc"
+* Wait "2" seconds
+* Click to element "odemeSayfasindanSepeteDon"

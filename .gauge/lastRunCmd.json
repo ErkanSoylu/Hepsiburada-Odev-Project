@@ -1,0 +1,8 @@
+[
+	"C:\\Program Files\\Gauge\\bin\\gauge.exe",
+	"run",
+	"--machine-readable",
+	"--hide-suggestion",
+	"--simple-console",
+	"C:/Users/testinium/Downloads/ty-Trendyol-master/ty-Trendyol-master/specs/Odev.spec:9"
+]

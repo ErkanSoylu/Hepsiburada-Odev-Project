@@ -1,0 +1,247 @@
+[
+  {
+    "key" : "email",
+    "value" : "email",
+    "type" : "id"
+  },
+  {
+    "key" : "password",
+    "value" : "password",
+    "type" : "id"
+  },
+  {
+    "key" : "loginButton",
+    "value" : "//form[@id='form-login']//div[@class='form-actions']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "usernameArea",
+    "value" : "//a[@class='login user-name']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "sepetim",
+    "value" : "//a[@id='shoppingCart']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "alisverisiTamamla",
+    "value" : "//*[@id='short-summary']/div[1]/div[2]/button",
+    "type" : "xpath"
+  },
+  {
+    "key" : "priceArea",
+    "value" : "//*[@id='short-summary']/div[1]/p/span",
+    "type" : "xpath"
+  },
+  {
+    "key" : "anaSayfa",
+    "value" : "//div[@class='header-global sfcontainer']//span[contains(text(),'hepsiburada.com')]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "markaSecim",
+    "value" : "//li[@class='box-container brand']/ol/li",
+    "type" : "xpath"
+  },
+  {
+    "key" : "minimumPrice",
+    "value" : "//input[@placeholder='En az']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "maximumPrice",
+    "value" : "//input[@placeholder='En çok']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "searchFilter",
+    "value" : "//div[@class='range-contain-row right']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "urunListeleme",
+    "value" : "//ul[contains(@class,'product-list results-container do-flex list')]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "addToBasket",
+    "value" : "//*[@id=\\'addToCart\\']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "faturaAdreslerim",
+    "value" : "//a[contains(text(),'Fatura Adreslerim')]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "teslimatAdreslerim",
+    "value" : "//a[contains(text(),'Teslimat Adreslerim')]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "adresSilmeButonu",
+    "value" : "//a[@class='btn btn-md']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "adresVazgecButonu",
+    "value" : "//a[contains(text(),'Vazgeç')]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "adresSilmeOnayButonu",
+    "value" : "//a[@class='btn-delete btn-text'][contains(text(),'Sil')]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "AlisverisiTamamla",
+    "value" : "//button[@class='btn btn-primary full']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "krediKarti",
+    "value" : "//a[@class='accordion-title paymentType-1']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "krediKartiNo",
+    "value" : "//input[@id='card-no']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "krediKartiAdi",
+    "value" : "//input[@id='holder-Name']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "cvc",
+    "value" : "//input[@id='cvc']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "sonKullanmaTarihiAy",
+    "value" : "//div[@class='date-col group']//div[1]//div[1]//button[1]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "sonKullanmaTarihiYil",
+    "value" : "//div[@class='checkout-content']//div[2]//div[1]//button[1]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "odemeSayfasindanSepeteDon",
+    "value" : "//a[contains(text(),'hepsiburada.com | her')]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "urunDetayisim",
+    "value" : "//div[@class='product-information col lg-5 sm-1']//header[@class='title-wrapper']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "urunDetayFiyat",
+    "value" : "//span[@id='offering-price']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "lastPriceItem",
+    "value" : "//div[@class='sidebar-list']//div[1]//div[1]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "lastShipmentPrice",
+    "value" : "//div[@class='list-item']//div[2]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "loginPage",
+    "value" : "//*[@id='login']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "otoBahce",
+    "value" : "//li[@id='oto-bahce-yapi-market']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "mobilya",
+    "value" : "//ul[@id='menu-0']//a[@class='menu-item'][contains(text(),'Mobilya')]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "adresisim",
+    "value" : "first-name",
+    "type" : "id"
+  },
+  {
+    "key" :"adresSoyisim",
+    "value" : "last-name",
+    "type" : "id"
+  },
+  {
+    "key" : "adres",
+    "value" : "address",
+    "type" : "id"
+  },
+  {
+    "key": "adresAdi",
+    "value" : "address-name",
+    "type" : "id"
+  },
+  {
+    "key": "telefon",
+    "value" : "phone",
+    "type" : "id"
+  },
+  {
+    "key": "tc",
+    "value" : "citizen-id",
+    "type" : "id"
+  },
+  {
+    "key": "ilce",
+    "value" : "//div[@class='container']//div[3]//div[1]//div[1]//button[1]//span[2]",
+    "type" : "xpath"
+  },
+  {
+    "key": "altLogo",
+    "value" : "//*[@id=\"page\"]/footer/div[1]/div[1]/a",
+    "type" : "xpath"
+  },
+  {
+    "key": "adalar",
+    "value" : "//div[@class='dropdown-menu open']/ul[@class='dropdown-menu inner selectpicker']/li[@rel='1']/a/span[contains(text(),'ADALAR')]",
+    "type" : "xpath"
+  },
+  {
+    "key": "hesabim",
+    "value" : "#myAccount > div.accountToggle > div > ul > li:nth-child(2)",
+    "type" : "css"
+  },
+  {
+  "key": "adreslerim",
+  "value" : "//a[contains(text(),'Adreslerim')]",
+  "type" : "xpath"
+},
+  {
+    "key": "sepetListeleme",
+    "value" : "//ul[@class='cart-item-list']/li",
+    "type" : "xpath"
+  },
+  {
+    "key": "ustKategori",
+    "value": "body > div.wrapper > div:nth-child(4) > div.navigation > div.navigationWrapper > div > ul > li  > a > span",
+    "type": "css"
+  },
+  {
+    "key" : "adetArttir",
+    "value" : "//button[@class='increase']",
+    "type" : "xpath"
+  },
+  {
+    "key": "altKategori",
+    "value": ".menu-item",
+    "type": "css"
+  }
+]
