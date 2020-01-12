@@ -17,7 +17,7 @@ ErkanOdev
 * Wait "10" seconds
 * Excele ismi ve tutarı yazdır
 * Wait "10" seconds
-Fiyat karşılaştırma alanı gelecek.
+* "erkan" niteliğini sakla <key> elementi için
 * Sepete ekle ve sepetime git
 * Wait "5" seconds
 * Click to element "alisverisiTamamla"
@@ -29,3 +29,4 @@ Fiyat karşılaştırma alanı gelecek.
 * Kredi kartını seç ve bilgileri doldur ardından sepete dön
 * Sepeti ürünü kontrol et
 * Fatura adreslerim alanına git ve adreslerimi sil
+* Tarayiciyi kapat

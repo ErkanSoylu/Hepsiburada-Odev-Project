@@ -33,8 +33,7 @@ This is a concept file with following syntax for each concept.
 # Sepete ekle ve sepetime git
 * "1" Adet seç ve sepete ekle / ardından sepete git ve adeti karşılaştır.
 * Wait "2" seconds
-* Adedi 2 arttir
-* Wait "2" seconds
+
 
 # Fatura adreslerim alanına git ve adreslerimi sil
 * Menüye götür ve bekle

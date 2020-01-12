@@ -102,13 +102,6 @@ public class StepImplementation extends BaseTest {
     int randomProduct = rand.nextInt(allProducts.size());
     allProducts.get(randomProduct).click();
   }
-@Step("listelenen sayfadan rastgele ürün seç")
-  public void selectRandomProduct(){
-  List<WebElement> allProducts = driver.findElements(By.xpath("//div[@class='prdct-cntnr-wrppr']"));
-  Random rand = new Random();
-  int randomProduct = rand.nextInt(allProducts.size());
-  allProducts.get(randomProduct).click();
-  }
   private void hoverElementBy(String key) {
     WebElement webElement = findElement(key);
     Actions actions = new Actions(driver);
@@ -132,35 +125,9 @@ public class StepImplementation extends BaseTest {
     return driver.switchTo().alert().getText();
   }
 
-  private String getCurrentDateThenAddDays(int daysToAdd) {
-    DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-
-    Date currentDate = new Date();
-
-    // convert date to calendar
-    Calendar c = Calendar.getInstance();
-    c.setTime(currentDate);
-
-    c.add(Calendar.DAY_OF_MONTH, daysToAdd);
-
-    return dateFormat.format(c.getTime());
-  }
 
   public static String getSavedAttribute() {
     return SAVED_ATTRIBUTE;
-  }
-
-  public String randomString(int stringLength) {
-
-    Random random = new Random();
-    char[] chars = "ABCDEFGHIJKLMNOPQRSTUWVXYZabcdefghijklmnopqrstuwvxyz0123456789".toCharArray();
-    String stringRandom = "";
-    for (int i = 0; i < stringLength; i++) {
-
-      stringRandom = stringRandom + String.valueOf(chars[random.nextInt(chars.length)]);
-    }
-
-    return stringRandom;
   }
 
   public WebElement findElementWithKey(String key) {
@@ -173,11 +140,6 @@ public class StepImplementation extends BaseTest {
 
   public String getElementAttributeValue(String key, String attribute) {
     return findElement(key).getAttribute(attribute);
-  }
-
-  @Step("print page source")
-  public void printPageSource() {
-    System.out.println(getPageSource());
   }
 
   public void javaScriptClicker(WebDriver driver, WebElement element) {
@@ -208,6 +170,22 @@ public class StepImplementation extends BaseTest {
     }
   }
 
+  @Step("Tarayiciyi kapat") public void closeTheBrowser() {
+    driver.close();
+  }
+
+  @Step({"Save attribute <attribute> value of element <key>",
+          "<attribute> niteliğini sakla <key> elementi için"})
+  public void saveAttributeValueOfElement(String attribute, String key) {
+    SAVED_ATTRIBUTE = findElement(key).getAttribute(attribute);
+    System.out.println("Saved attribute value is: " + SAVED_ATTRIBUTE);
+  }
+
+  @Step({"Write saved attribute value to element <key>",
+          "Kaydedilmiş niteliği <key> elementine yaz"})
+  public void writeSavedAttributeToElement(String key) {
+    findElement(key).sendKeys(SAVED_ATTRIBUTE);
+  }
 
   @Step({"Click to element <key>",
           "Elementine tıkla <key>"})
@@ -249,8 +227,8 @@ public class StepImplementation extends BaseTest {
   public void HooverMouseAndClick()
   {
     Actions action = new Actions(driver);
-    WebElement mainMenu = driver.findElement(By.xpath("//*[@id=\'myAccount\']"));
-    action.moveToElement(mainMenu).moveToElement(driver.findElement(By.xpath("//*[@id=\'myAccount\']"))).click().build().perform();
+    WebElement mainMenu = findElement("menu");
+    action.moveToElement(mainMenu).moveToElement(findElement("menu")).click().build().perform();
   }
   @Step("Sepetteki ürünü kontrol et")
   public void controlTheBasketCount() throws InterruptedException {
@@ -361,12 +339,18 @@ public class StepImplementation extends BaseTest {
     String str1 = Integer.toString(tane);
     changeCount.clear();
     changeCount.sendKeys(str1);
-    ClickElement(By.xpath("//*[@id=\'addToCart\']"));
+    System.out.println("asdkadkakodskoakd");
+    clickElement("sepeteEkle");
     Thread.sleep(5000);
-    ClickElement(By.xpath("//*[@id=\'shoppingCart\']"));
+    clickElement("alisverisSepetim");
     Thread.sleep(3000);
-   String getPNRtext =  findElement(By.xpath("//*[@id=\'short-summary\']/div[1]/p/span")).getText();
+    String getPNRtext =  findElement(By.xpath("//*[@id=\'short-summary\']/div[1]/p/span")).getText();
     String pnrText = getPNRtext.substring(0, 1);
+    Thread.sleep(3000);
+    clickElement("adetArttir");
+    Thread.sleep(5000);
+    clickElement("adetArttir");
+    Thread.sleep(10000);
     if ( pnrText.equals(str1) ) {
       System.out.println("Ürünün liste adedi ile sepet adedi aynıdır. ");
     }
@@ -382,20 +366,19 @@ public class StepImplementation extends BaseTest {
     Thread.sleep(5000);
     clickElement("adetArttir");
     Thread.sleep(10000);
-    System.out.println("Yazı yazıyormu kontrol");
   }
   @Step("ilce yi sec")
   public void bekle() throws InterruptedException {
-    WebElement test = driver.findElement(By.xpath("//button[@class='btn dropdown-toggle selectpicker btn-default'][@data-id='town']/span[@class='caret']"));
+    WebElement test = findElement("ilceAlani");
     test.click();
-    WebElement ilce1 = driver.findElement(By.xpath("//div[@class='dropdown-menu open']/ul[@class='dropdown-menu inner selectpicker']/li[@rel='1']/a/span[contains(text(),'ADALAR')]"));
+    WebElement ilce1 = findElement("adalar");
     ilce1.click();
   }
   @Step("mahalle yi sec")
   public void mahalle() throws InterruptedException {
-    WebElement mahalle1 = driver.findElement(By.xpath("//button[@class='btn dropdown-toggle selectpicker btn-default'][@data-id='district']/span[@class='caret']"));
+    WebElement mahalle1 = findElement("mahalleAlani");
     mahalle1.click();
-    WebElement mahallesec = driver.findElement(By.xpath("//div[@class='dropdown-menu open']/ul[@class='dropdown-menu inner selectpicker']/li[@rel='1']/a/span[contains(text(),'ATATÜRK MAHALLESİ')]"));
+    WebElement mahallesec = findElement("ataturkMahallesi");
     mahallesec.click();
   }
 }

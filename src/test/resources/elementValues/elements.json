@@ -180,6 +180,46 @@
     "type" : "id"
   },
   {
+    "key" : "menu",
+    "value" : "//*[@id='myAccount']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "sepeteEkle",
+    "value" : "//*[@id='addToCart']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "alisverisSepetim",
+    "value" : "//*[@id='shoppingCart']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "ilceAlani",
+    "value" : "//button[@class='btn dropdown-toggle selectpicker btn-default'][@data-id='town']/span[@class='caret']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "adalar",
+    "value": "//div[@class='dropdown-menu open']/ul[@class='dropdown-menu inner selectpicker']/li[@rel='1']/a/span[contains(text(),'ADALAR')]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "mahalleAlani",
+    "value" : "//button[@class='btn dropdown-toggle selectpicker btn-default'][@data-id='district']/span[@class='caret']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "ataturkMahallesi",
+    "value" : "//div[@class='dropdown-menu open']/ul[@class='dropdown-menu inner selectpicker']/li[@rel='1']/a/span[contains(text(),'ATATÜRK MAHALLESİ')]",
+    "type" : "xpath"
+  },
+  {
+    "key" : "urunAdetAlani",
+    "value" : "//*[@id=\\'short-summary\\']/div[1]/p/span",
+    "type" : "xpath"
+  },
+  {
     "key" : "adres",
     "value" : "address",
     "type" : "id"
