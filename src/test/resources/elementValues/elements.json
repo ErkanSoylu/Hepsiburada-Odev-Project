@@ -195,6 +195,16 @@
     "type" : "xpath"
   },
   {
+    "key" : "sepetimdekiFiyat",
+    "value" : "//div[@class='total-price']",
+    "type" : "xpath"
+  },
+  {
+    "key" : "listenenSayfadakiFiyat",
+    "value" : "//div[contains(@class,'extra-discount-price')]//span",
+    "type" : "xpath"
+  },
+  {
     "key" : "ilceAlani",
     "value" : "//button[@class='btn dropdown-toggle selectpicker btn-default'][@data-id='town']/span[@class='caret']",
     "type" : "xpath"

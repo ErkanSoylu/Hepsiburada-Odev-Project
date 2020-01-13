@@ -17,8 +17,13 @@ ErkanOdev
 * Wait "10" seconds
 * Excele ismi ve tutarı yazdır
 * Wait "10" seconds
-* "erkan" niteliğini sakla <key> elementi için
+* Wait "5" seconds
+* "urunDetayFiyat" li elementi bul ve değerini "erkanTest" olarak sakla
+* Wait "5" seconds
 * Sepete ekle ve sepetime git
+* Wait "5" seconds
+* "lastPriceItem" li elementi bul ve değerini "erkanTest" saklanan değer ile karşılaştır ve değişiklik olmadığını dogrula
+* Adedi 2 arttir
 * Wait "5" seconds
 * Click to element "alisverisiTamamla"
 * Wait "5" seconds

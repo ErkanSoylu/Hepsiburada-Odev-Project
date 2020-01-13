@@ -174,17 +174,18 @@ public class StepImplementation extends BaseTest {
     driver.close();
   }
 
-  @Step({"Save attribute <attribute> value of element <key>",
-          "<attribute> niteliğini sakla <key> elementi için"})
-  public void saveAttributeValueOfElement(String attribute, String key) {
-    SAVED_ATTRIBUTE = findElement(key).getAttribute(attribute);
-    System.out.println("Saved attribute value is: " + SAVED_ATTRIBUTE);
+  @Step({"<key> li elementi bul ve değerini <saveKey> saklanan değer ile karşılaştır ve değişiklik olmadığını dogrula",
+          "Find element by <key> and compare saved key <saveKey>"})
+  public void equalsSaveTextByKeyNotequal(String key, String saveKey) throws InterruptedException {
+    Thread.sleep(10000);
+    Assert.assertEquals(StoreHelper.INSTANCE.getValue(saveKey), findElement(key).getText());
   }
-
-  @Step({"Write saved attribute value to element <key>",
-          "Kaydedilmiş niteliği <key> elementine yaz"})
-  public void writeSavedAttributeToElement(String key) {
-    findElement(key).sendKeys(SAVED_ATTRIBUTE);
+  @Step({"<key> li elementi bul ve değerini <saveKey> olarak sakla",
+          "Find element by <key> and save text <saveKey>"})
+  public void saveTextByKey(String key, String saveKey) throws InterruptedException {
+    Thread.sleep(1000);
+    StoreHelper.INSTANCE.saveValue(saveKey, findElement(key).getText());
+    Thread.sleep(2000);
   }
 
   @Step({"Click to element <key>",
@@ -339,7 +340,6 @@ public class StepImplementation extends BaseTest {
     String str1 = Integer.toString(tane);
     changeCount.clear();
     changeCount.sendKeys(str1);
-    System.out.println("asdkadkakodskoakd");
     clickElement("sepeteEkle");
     Thread.sleep(5000);
     clickElement("alisverisSepetim");
@@ -347,10 +347,6 @@ public class StepImplementation extends BaseTest {
     String getPNRtext =  findElement(By.xpath("//*[@id=\'short-summary\']/div[1]/p/span")).getText();
     String pnrText = getPNRtext.substring(0, 1);
     Thread.sleep(3000);
-    clickElement("adetArttir");
-    Thread.sleep(5000);
-    clickElement("adetArttir");
-    Thread.sleep(10000);
     if ( pnrText.equals(str1) ) {
       System.out.println("Ürünün liste adedi ile sepet adedi aynıdır. ");
     }
