@@ -11,10 +11,8 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -268,26 +266,6 @@ public class StepImplementation extends BaseTest {
     int randomProduct = rand.nextInt(allProducts.size());
     allProducts.get(randomProduct).click();
   }
-  @Step("Excele ismi ve tutarı yazdır")
-  public void writeCsvFileNameandPrice() {
-    try {
-      String isim = findElement("urunDetayisim").getText();
-      String fiyat=findElement("urunDetayFiyat").getAttribute("content").toString();
-      Workbook wb = new HSSFWorkbook();
-      Sheet sheet1 = wb.createSheet("Ürün Bilgileri");
-      Row row = sheet1.createRow((short)0);
-      Row row1 = sheet1.createRow((short)1);
-      Cell cell = row.createCell(0);
-      cell.setCellValue("Ürünün İsmi : "+isim);
-      Cell cell1 = row1.createCell(0);
-      cell1.setCellValue("Ürünün Fiyati : "+fiyat);
-      FileOutputStream fileOut = new FileOutputStream("C:\\Users\\testinium\\Downloads\\ty-Trendyol-master\\ty-Trendyol-master\\src\\test\\resources\\elementValues\\urun_bilgileri.csv");
-      wb.write(fileOut);
-      fileOut.close();
-    }
-    catch (Exception e) {
-    }
-  }
   public static int randomNumber(int start, int end) {
     Random rn = new Random();
     int randomNumber = rn.nextInt(end - 1) + start;
@@ -307,27 +285,21 @@ public class StepImplementation extends BaseTest {
     WebElement getSubCategory = subCategoryList.get(randomSubCategory);
     getSubCategory.click();
   }
-  @Step("Excele kargo tutarı ve ürün tutarı yazdır")
-  public void writeCsvFileNameandPriceLast() {
-      try {
-        String urun_fiyati = findElement("lastPriceItem").getText();
-        String kargo_fiyati = findElement("lastShipmentPrice").getText();
-        Workbook wb = new HSSFWorkbook();
-        Sheet sheet1 = wb.createSheet("Ürün Bilgileri");
-        Row row = sheet1.createRow((short)0);
-        Row row1 = sheet1.createRow((short)1);
-        Cell cell = row.createCell(0);
-        cell.setCellValue("Ürünün kendi fiyati : "+urun_fiyati);
-        Cell cell1 = row1.createCell(0);
-        cell1.setCellValue("Ürünün kargo fiyati : "+kargo_fiyati);
-        FileOutputStream fileOut = new FileOutputStream("C:\\Users\\testinium\\Downloads\\ty-Trendyol-master\\ty-Trendyol-master\\src\\test\\resources\\elementValues\\fiyat_bilgileri.csv");
-        wb.write(fileOut);
-        fileOut.close();
-      }
-      catch (Exception e) {
-      }
+  @Step("<adini> ve <fiyatini> <csv> dosyasına kaydet")
+  public void urunAdiVsFiyati(String urunadi, String urunFiyati, String csv) throws IOException {
+    WebElement urunElementi = findElementWithKey(urunadi);
+    WebElement fiyatElement = findElementWithKey(urunFiyati);
+    csvYazdir(fiyatElement.getText(), urunElementi.getText(), csv);
   }
 
+  public void csvYazdir(String urunFiyati, String urunAdi,String dosyaAdı) throws IOException {
+    FileWriter csvWriter = new FileWriter(dosyaAdı);
+    csvWriter.append("\"" + urunAdi + "\"");
+    csvWriter.append("\n");
+    csvWriter.append("\"" + urunFiyati + "\"");
+    csvWriter.flush();
+    csvWriter.close();
+  }
   @Step({"Check if element <key> contains text <expectedText>",
           "<key> elementi <text> değerini içeriyor mu kontrol et"})
   public void checkElementContainsText(String key, String expectedText) {

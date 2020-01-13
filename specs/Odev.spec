@@ -9,27 +9,17 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
 ErkanOdev
 -------
 * Kullanıcı Girişi
-* Click to element "sepetim"
+* Elementine tıkla "sepetim"
 * Sepetteki ürünü kontrol et
 * Kategorinin üzerine götür ve  "ustKategori" alt kategoriye tıkla "altKategori"
 * Marka seç
 * "urunListeleme" alanindan Rastgele bir nesne seç
-* Wait "10" seconds
-* Excele ismi ve tutarı yazdır
-* Wait "10" seconds
-* Wait "5" seconds
-* "urunDetayFiyat" li elementi bul ve değerini "erkanTest" olarak sakla
-* Wait "5" seconds
+* "urunDetayisim" ve "urunDetayFiyat" "urunBilgileri.csv" dosyasına kaydet
 * Sepete ekle ve sepetime git
-* Wait "5" seconds
-* "lastPriceItem" li elementi bul ve değerini "erkanTest" saklanan değer ile karşılaştır ve değişiklik olmadığını dogrula
 * Adedi 2 arttir
-* Wait "5" seconds
-* Click to element "alisverisiTamamla"
-* Wait "5" seconds
-* Wait "5" seconds
-* Excele kargo tutarı ve ürün tutarı yazdır
-* Wait "5" seconds
+* Elementine tıkla "alisverisiTamamla"
+* "5" saniye bekle
+* "lastPriceItem" ve "lastShipmentPrice" "urunVeKargoBilgileri.csv" dosyasına kaydet
 * Yeni adres ekle butonuna tıklanır ve adres eklenir.
 * Kredi kartını seç ve bilgileri doldur ardından sepete dön
 * Sepeti ürünü kontrol et
